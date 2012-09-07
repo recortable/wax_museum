@@ -7,7 +7,7 @@ describe StaticPage do
     page = StaticPage.new('path', 'gdoc_id')
 
     page.path.should eq('path')
-    page.document_id.should eq('dgoc_id')
+    page.document_id.should eq('gdoc_id')
   end
 
 end
