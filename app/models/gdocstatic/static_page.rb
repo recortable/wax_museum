@@ -21,6 +21,10 @@ class Gdocstatic::StaticPage
     @body
   end
 
+  def cache_key
+    "#{self.path}-static_page" 
+  end
+
   protected
   URL_BASE = 'https://docs.google.com/document/'
   def fecth_document
