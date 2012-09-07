@@ -1,5 +1,7 @@
 module Gdocstatic
   module Configuration
+    mattr_accessor :config
+
     def self.setup(source = nil)
       if source.is_a?(String)
         @@config = HashWithIndifferentAccess.new(YAML.load(File.read(source)))
