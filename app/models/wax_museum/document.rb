@@ -1,6 +1,5 @@
 # encoding: UTF-8
 require 'open-uri'
-require 'nokogiri'
 
 class WaxMuseum::Document
   attr_accessor :path, :id, :type
@@ -27,8 +26,8 @@ class WaxMuseum::Document
 
   protected
   def fetch_document
-    url = Adapters::GoogleDocs.url_for(@id)
-    Adapters::GoogleDocs.new(open(url).read)
+    url = ::WaxMuseum::Adapters::GoogleDocs.url_for(@id)
+    ::WaxMuseum::Adapters::GoogleDocs.new(open(url).read)
   end
 
 end

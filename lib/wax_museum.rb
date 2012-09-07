@@ -12,6 +12,7 @@ module WaxMuseum
 
   def self.config(&block)
     Configuration.instance_eval(&block)
+    Configuration.documents
   end
 
   def self.find(path)
