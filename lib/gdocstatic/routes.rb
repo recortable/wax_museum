@@ -1,6 +1,6 @@
 module Gdocstatic
   module Routes 
-    def self.draw(options)
+    def self.draw(options = {})
       options.reverse_merge! on: '', reload_action: 'reload'
 
       Rails.application.routes.draw do
