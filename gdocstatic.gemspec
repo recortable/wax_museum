@@ -7,11 +7,11 @@ require "gdocstatic/version"
 Gem::Specification.new do |s|
   s.name        = "gdocstatic"
   s.version     = Gdocstatic::VERSION.dup
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Gdocstatic."
-  s.description = "TODO: Description of Gdocstatic."
+  s.authors     = ["Danigb"]
+  s.email       = ["danigb@gmail.com"]
+  s.homepage    = "https://github.com/recortable/gdocstatic"
+  s.summary     = "Another static pages rails engine"
+  s.description = "GdocStatic fetches the content from a specified google doc."
 
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "rails", "~> 3.2.8"
+  s.add_dependency "sass-rails", "~> 3.1"
   s.add_dependency "nokogiri"
 
   s.add_development_dependency "sqlite3"
