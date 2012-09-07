@@ -1,17 +1,17 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "gdocstatic/version"
+require "wax_museum/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "gdocstatic"
-  s.version     = Gdocstatic::VERSION.dup
+  s.name        = "wax_museum"
+  s.version     = WaxMuseum::VERSION.dup
   s.authors     = ["Danigb"]
   s.email       = ["danigb@gmail.com"]
-  s.homepage    = "https://github.com/recortable/gdocstatic"
+  s.homepage    = "https://github.com/recortable/wax_museum"
   s.summary     = "Another static pages rails engine"
-  s.description = "GdocStatic fetches the content from a specified google doc."
+  s.description = "WaxMuseum fetches the content from a specified google doc to show a static page."
 
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")

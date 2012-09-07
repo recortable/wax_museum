@@ -1,3 +1,3 @@
-module Gdocstatic
+module WaxMuseum
   VERSION = "0.0.1"
 end

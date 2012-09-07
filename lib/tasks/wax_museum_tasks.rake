@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :gdocstatic do
+# task :wax_museum do
 #   # Task goes here
 # end

@@ -1,4 +1,4 @@
-class Gdocstatic::StaticPagesController < ApplicationController
+class WaxMuseum::StaticPagesController < ApplicationController
 
   def show
     load_page
@@ -12,6 +12,6 @@ class Gdocstatic::StaticPagesController < ApplicationController
 
   protected
   def load_page
-    @page = Gdocstatic.find params[:id]
+    @page = WaxMuseum.find params[:id]
   end
 end

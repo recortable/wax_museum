@@ -2,7 +2,7 @@
 require 'open-uri'
 require 'nokogiri'
 
-class Gdocstatic::StaticPage 
+class WaxMuseum::Document
   attr_accessor :path, :document_id
 
   def initialize(path, document_id)

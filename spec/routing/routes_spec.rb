@@ -1,12 +1,14 @@
 require 'spec_helper'
 
-include Gdocstatic
+include WaxMuseum
 
 describe 'routes' do
 
   context 'using prefix' do
     before(:all) do
-      Configuration.setup( {documents: {one: 'one'} } )
+      WaxMuseum.config do
+        doc 'one', gdoc_id: 'id'
+      end
       Routes.draw(on: 'info')
     end
 
