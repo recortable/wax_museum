@@ -12,13 +12,13 @@ class WaxMuseum::Document
   end
 
   def title
-    @fetched ||= fecth_document
-    @title
+    @doc ||= fetch_document
+    @title ||= @doc.title
   end
 
   def body
-    @fetched ||= fecth_document
-    @body
+    @doc ||= fetch_document
+    @body || @doc.body
   end
 
   def cache_key
@@ -26,23 +26,9 @@ class WaxMuseum::Document
   end
 
   protected
-  URL_BASE = 'https://docs.google.com/document/'
-  def fecth_document
-    url = "#{URL_BASE}pub?id=#{@document_id}"
-    html = open(url).read
-    page = ::Nokogiri::HTML(html, nil, 'utf-8')
-    page.encoding = 'utf-8'
-
-    @title = page.xpath("//title").text
-    body = page.xpath('//div[@id="contents"]')
-    #page.xpath("//head").remove
-    body.xpath("//script").remove
-    body.xpath("//style").remove
-    body.xpath("//@style").remove
-    body.xpath("//img").each do |img|
-      img['src'] = "#{URL_BASE}#{img['src']}" if img['src'].present? 
-    end
-    @body = body.to_html
+  def fetch_document
+    url = Adapters::GoogleDocs.url_for(@id)
+    Adapters::GoogleDocs.new(open(url).read)
   end
 
 end
