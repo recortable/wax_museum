@@ -11,8 +11,8 @@ module WaxMuseum
   end
 
   def self.find(path)
-    document_id = Configuration.document_id(path)
-    raise ActiveRecord::RecordNotFound.new("[wax_museum] Page with id #{path} not found.") if document_id.blank?
-    Document.new(path, document_id)
+    properties = Configuration.properties(path)
+    raise ActiveRecord::RecordNotFound.new("[wax_museum] Document '#{path}' not found.") if properties.blank?
+    Document.new(properties)
   end
 end

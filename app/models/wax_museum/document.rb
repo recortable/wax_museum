@@ -3,12 +3,12 @@ require 'open-uri'
 require 'nokogiri'
 
 class WaxMuseum::Document
-  attr_accessor :path, :document_id
+  attr_accessor :path, :id, :type
 
-  def initialize(path, document_id)
-    @path = path
-    @document_id = document_id
-    @fetched = false
+  def initialize(properties)
+    @type = :gdoc
+    @path = properties.fetch(:path)
+    @id = properties.fetch(:id)
   end
 
   def title

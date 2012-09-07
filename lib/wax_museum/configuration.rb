@@ -15,7 +15,7 @@ module WaxMuseum
       @@documents.keys
     end
 
-    def self.document_id(path)
+    def self.properties(path)
       @@documents[path]
     end
 
