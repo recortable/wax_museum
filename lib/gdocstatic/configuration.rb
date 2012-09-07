@@ -8,6 +8,8 @@ module Gdocstatic
       else
         @@config = {documents: {} }
       end
+      raise Exception.new('documents is required in gdocstatic.yml config') unless @@config.include?(:documents)
+      @@config
     end
 
     def self.paths
