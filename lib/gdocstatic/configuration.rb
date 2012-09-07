@@ -6,7 +6,7 @@ module Gdocstatic
       if source.is_a?(String)
         @@config = HashWithIndifferentAccess.new(YAML.load(File.read(source)))
       elsif source.is_a?(Hash)
-        @@config = source
+        @@config = HashWithIndifferentAccess.new(source)
       else
         @@config = {documents: {} }
       end
