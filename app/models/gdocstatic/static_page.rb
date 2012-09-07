@@ -35,9 +35,9 @@ class Gdocstatic::StaticPage
     body.xpath("//script").remove
     body.xpath("//style").remove
     body.xpath("//@style").remove
-    #@body.xpath("//img").each do |img|
-    #  img['src'] = "#{StaticPages.url_base}#{img['src']}" if img['src'].present? 
-    #end
+    body.xpath("//img").each do |img|
+      img['src'] = "#{URL_BASE}#{img['src']}" if img['src'].present? 
+    end
     @body = body.to_html
   end
 
