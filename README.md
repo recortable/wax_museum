@@ -9,7 +9,7 @@ application.
 
 ### ... and why's different from other alternatives?
 
-The content of the static pages is a google doc document that wax_museum
+**The content of the static pages is stored in a google doc document** that wax_museum
 scraps and put inside your layout. So the content can be updated without
 the need of database models or admin areas.
 
@@ -17,7 +17,7 @@ the need of database models or admin areas.
 
 Currently the gem only can be fetched from github. Add to Gemfile:
 
-    gem 'wax_museum', git: 'http://github.com/recortable/wax_museum'
+    gem 'wax_museum', git: 'git://github.com/recortable/wax_museum.git'
 
 ## Usage
 
