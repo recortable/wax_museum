@@ -31,15 +31,36 @@ There are several ways to configure wax museum:
 Write an initializer:
 
     WaxMuseum.config do
-      doc 'about', '1spk6wI4eD5WxvHgmUVaVcQLiReDo9pjPqPMUHN5Z3TI'
+      publish 'about', '1spk6wI4eD5WxvHgmUVaVcQLiReDo9pjPqPMUHN5Z3TI'
     end
 
 ### 2. Using a .yml file
 
+Not ready yet.
+
 ## Generate routes
 
-    WaxMuseum::Routes.write
+In your `routes.rb` file add the following line:
 
+    WaxMuseum::Routes.draw
+
+Remember the routes are order dependant, so where you put this line is
+important.
+
+With the above configuration, you will get a '/about' path that points
+to the contents of the google document.
+
+### Routes options
+
+You can pass options to the Routes.write method:
+
+    WaxMuseum::Routes.draw(prefix: 'info')
+
+The options are:
+
+- prefix: Add a path prefix to the route ('/info/about' instead of
+'/about'). Defaults to ''
+- cache: Perform fragment caching in the views. Defaults to true
 
 ## License
 
