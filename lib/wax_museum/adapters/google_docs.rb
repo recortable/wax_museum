@@ -6,6 +6,11 @@ module WaxMuseum
     class GoogleDocs
       URL_BASE = 'https://docs.google.com/document/'
 
+      def self.open(id)
+        url = url_for(id)
+        self.new(Gateway.open(url))
+      end
+
       def self.url_for(id)
         "#{URL_BASE}pub?id=#{id}"
       end
@@ -33,6 +38,8 @@ module WaxMuseum
         end
       end
     end
+
+    register(:gdoc, GoogleDocs)
 
   end
 end

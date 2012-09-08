@@ -1,11 +1,9 @@
-# encoding: UTF-8
-require 'open-uri'
 
 class WaxMuseum::Document
   attr_accessor :path, :id, :type
 
   def initialize(properties)
-    @type = :gdoc
+    @type = properties.fetch(:type)
     @path = properties.fetch(:path)
     @id = properties.fetch(:id)
   end
@@ -26,8 +24,7 @@ class WaxMuseum::Document
 
   protected
   def fetch_document
-    url = ::WaxMuseum::Adapters::GoogleDocs.url_for(@id)
-    ::WaxMuseum::Adapters::GoogleDocs.new(open(url).read)
+    ::WaxMuseum::Adapters.fetch(@type).open(@id)
   end
 
 end

@@ -7,7 +7,7 @@ describe 'routes' do
   context 'using prefix' do
     before(:all) do
       WaxMuseum.config do
-        doc 'one', gdoc_id: 'id'
+        publish 'one', 'id'
       end
       Routes.draw(on: 'info')
     end

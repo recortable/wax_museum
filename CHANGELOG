@@ -2,6 +2,11 @@
 CHANGELOG
 =========
 
+# 8/09/2012
+- Rename doc to publish
+- You can publish only with the id (the rest are implicit)
+- Adapters register themselves
+
 # 7/09/2012
 - Basic caching
 

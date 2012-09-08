@@ -4,19 +4,19 @@ describe WaxMuseum do
   before do
     WaxMuseum::Configuration.init
     WaxMuseum.config do
-      doc 'one', id: 'gdoc_id'
+      publish 'one', 'id'
     end
   end
 
-  it 'should add and retrieve' do
-
+  it 'should retrieve by key' do
     WaxMuseum.find(:one).should be_present
     WaxMuseum.find('one').should be_present
   end
 
-  it 'should retrieve document' do
+  it 'should retrieve valid document' do
     doc = WaxMuseum.find('one')
     doc.path.should eq('one')
-    doc.id.should eq('gdoc_id')
+    doc.id.should eq('id')
+    doc.type.should eq('gdoc')
   end
 end

@@ -6,9 +6,16 @@ module WaxMuseum
       @@documents = HashWithIndifferentAccess.new
     end
 
-    def self.doc(path, properties = {})
-      properties.reverse_merge! path: path
-      @@documents[path] = properties
+    def self.publish(path, data)
+      if data.is_a?(String)
+        @@documents[path] = { path: path, id: data, type: 'gdoc' }
+      elsif data.is_a?(Hash)
+        @@documents[path] = { path: path,
+                              id: data.fetch(:id),
+                              type: data.fetch(:type, 'gdoc') }
+      else
+        throw Exception.new("Can't publish #{path}: unknown data (#{data})")
+      end
     end
 
     def self.paths
